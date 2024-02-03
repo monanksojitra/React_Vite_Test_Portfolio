@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/Random-Portfolio/",
+  base: "/React_Vite_Test_Portfolio/",
   plugins: [react()],
   resolve: {
     alias: {
