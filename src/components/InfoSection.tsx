@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import TitelBox from "./TitelBox";
-import { Input } from "./ui/input";
 
 const InfoSection = () => {
   const [formData, setFormData] = useState({

@@ -1,7 +1,3 @@
-import React from "react";
-import Iframe from "react-iframe";
-import { LinkedInEmbed } from "react-social-media-embed";
-
 const Test = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -15,8 +11,6 @@ const Test = () => {
         src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7154721239549280257"
         height="980"
         width="504"
-        frameborder="0"
-        allowfullscreen=""
         title="Embedded post"
       ></iframe>
     </div>

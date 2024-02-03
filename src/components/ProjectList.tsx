@@ -1,29 +1,30 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import React, { useCallback, useRef } from "react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import TitelBox from "./TitelBox";
-import { ListofProject } from "@/data/ProjectData";
-import { FreeMode, Pagination } from "swiper/modules";
-import Iframe from "react-iframe";
+import { Pagination } from "swiper/modules";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
-import { useCallback, useRef } from "react";
+import TitelBox from "./TitelBox";
+import { ListofProject } from "@/data/ProjectData";
 
-const ProjectList = () => {
-  const sliderRef = useRef(null);
+interface ProjectListProps {}
+
+const ProjectList: React.FC<ProjectListProps> = () => {
+  const sliderRef = useRef<SwiperRef | null>(null);
 
   const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
+    if (sliderRef.current && sliderRef.current.swiper) {
+      sliderRef.current.swiper.slidePrev();
+    }
   }, []);
 
   const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
+    if (sliderRef.current && sliderRef.current.swiper) {
+      sliderRef.current.swiper.slideNext();
+    }
   }, []);
 
   return (
@@ -40,15 +41,15 @@ const ProjectList = () => {
         className="absolute right-2 sm:right-6 translate-y-32  z-20"
       />
       <Swiper
-        ref={sliderRef}
+        ref={(instance) => {
+          if (instance) {
+            sliderRef.current = instance;
+          }
+        }}
         breakpoints={{
-          // when window width is >= 0px
-
-          // when window width is >= 320px
           320: {
             slidesPerView: 1,
           },
-          // when window width is >= 768px
           666: {
             slidesPerView: 2,
           },
@@ -58,7 +59,6 @@ const ProjectList = () => {
           1200: {
             slidesPerView: 4,
           },
-          // when window width is >= 992px
         }}
         slidesPerView={1}
         spaceBetween={30}
@@ -66,13 +66,13 @@ const ProjectList = () => {
         modules={[Pagination]}
         className="mySwiper scroll-smooth"
       >
-        {ListofProject.map((item) => (
-          <SwiperSlide>
+        {ListofProject.map((item, index: number) => (
+          <SwiperSlide key={index}>
             <iframe
               className="no-scrollbar"
               src={item.linkedinEmbed}
               height="300"
-              width={window.innerWidth > 450 ?"400":"270"}
+              width={window.innerWidth > 450 ? "400" : "270"}
             ></iframe>
           </SwiperSlide>
         ))}

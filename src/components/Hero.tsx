@@ -1,4 +1,3 @@
-import React from "react";
 import coding from "../assets/coding.jpg";
 const Hero = () => {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const TitelBox = ({ titel="Make titel here!!", css = " " }) => {
   return (

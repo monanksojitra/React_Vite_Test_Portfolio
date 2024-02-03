@@ -1,8 +1,5 @@
-import React from "react";
 import TitelBox from "./TitelBox";
-import { DiLinux } from "react-icons/di";
 import { TbBrandReactNative } from "react-icons/tb";
-import { IoLogoJavascript } from "react-icons/io";
 import {
   FaHtml5,
   FaCss3,
@@ -13,7 +10,6 @@ import {
   FaCube,
   FaLinux,
 } from "react-icons/fa";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { SiTailwindcss } from "react-icons/si";
 
 const Skills = () => {

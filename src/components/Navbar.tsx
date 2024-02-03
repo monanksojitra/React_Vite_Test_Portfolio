@@ -1,5 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [show, setshow] = useState(false);
