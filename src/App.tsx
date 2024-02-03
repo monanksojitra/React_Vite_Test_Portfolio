@@ -12,18 +12,7 @@ import Skills from "./components/Skills";
 import Test from "./components/Test";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="font-Poppins py-2 container mx-auto">
-        <Routes>
-          <Route path="/" element={<MainLayout />}>
-            <Route index element={<MainSection />} />
-            <Route path="/test" element={<Test />} />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+  return <DeoloymentComponent />;
 };
 
 export default App;
@@ -54,5 +43,34 @@ const MainSection = () => {
       <Contect />
       <InfoSection />
     </>
+  );
+};
+
+const RouterComponent = () => {
+  return (
+    <BrowserRouter>
+      <div className="font-Poppins py-2 container mx-auto">
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<MainSection />} />
+            <Route path="/test" element={<Test />} />
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+};
+
+const DeoloymentComponent = () => {
+  return (
+    <div className="font-Poppins py-2 container mx-auto">
+      <Navbar />
+      <Hero />
+      <ProjectList />
+      <Skills />
+      <Contect />
+      <InfoSection />
+      <Footer />
+    </div>
   );
 };
