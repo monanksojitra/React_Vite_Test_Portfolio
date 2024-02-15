@@ -11,7 +11,7 @@ Welcome to the repository for a sleek, dark-themed, and fully responsive portfol
 
 2. **Navigate to the Project Directory**:
    ```bash
-   cd portfolio-site
+   cd React_Vite_Test_Portfolio
    ```
 
 3. **Install Dependencies**:
