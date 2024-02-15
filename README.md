@@ -34,8 +34,8 @@ We welcome contributions to enhance this portfolio site. Here's how you can cont
 1. **Fork the Repository**: Click on the "Fork" button in the top-right corner of the repository page.
 
 2. **Clone Your Fork**:
-   ```bash
-  git clone https://github.com/monanksojitra/React_Vite_Test_Portfolio.git
+    ```bash
+   git clone https://github.com/monanksojitra/React_Vite_Test_Portfolio.git
    ```
 
 3. **Create a New Branch**:
